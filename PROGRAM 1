@@ -1,0 +1,29 @@
+ 
+ 
+def mcp_neuron(weights, inputs, threshold): 
+weighted_sum = sum(w * i for w, i in zip(weights, inputs)) return 1 if weighted_sum >= threshold else 0 
+ 
+def logic_gate(gate_type, x1, x2): 
+if gate_type == "AND": 
+weights = [1, 1] threshold = 2 
+elif gate_type == "OR": 
+weights = [1, 1] threshold = 1 
+elif gate_type == "NAND": 
+weights = [-1, -1] threshold = -1 
+elif gate_type == "NOR": 
+weights = [-1, -1] threshold = 0 
+else: 
+return "Invalid gate type" 
+ 
+ 
+return mcp_neuron(weights, [x1, x2], threshold) 
+ 
+ 
+ 
+inputs = [(0, 0), (0, 1), (1, 0), (1, 1)] 
+gates = ["AND", "OR", "NAND", "NOR"] 	2117230020125 
+ 
+ 
+for gate in gates: print(f"\n{gate} GATE") for x1, x2 in inputs: 
+output = logic_gate(gate, x1, x2) 
+print(f"Input: ({x1}, {x2}) => Output: {output}") 
